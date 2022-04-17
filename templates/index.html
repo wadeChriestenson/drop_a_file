@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standard File Transfer Company</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/index_v1.css' %}" rel="stylesheet">
+      <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="titleWrapper">
+        <img src="{% static 'img/logo_form.png' %}" class="logo" alt="Logo of a form.">
+        <div class="textWrapper">
+    <h1 class="company">Standard File Transfer Company</h1>
+            <h4 class="motto">Specializing in Data Handling</h4>
+            </div>
+    </div>
+</header>
+<div class="emptySpacer"></div>
+<h3>Select an Option Below</h3>
+
+<p>Upload File - choose a file from your PC to upload to the server</p>
+<p>Download File - choose a file from the server to download to your PC</p>
+
+    <div class="selections">
+    <form method="post" target="_self" action="upload_files.html">{% csrf_token %}
+        <button type="submit">Upload File</button>
+    </form>
+        <form method="post" target="_self" action="download_files.html">{% csrf_token %}
+        <button type="submit">Download File</button>
+    </form>
+</div>
+</body>
+</html>
